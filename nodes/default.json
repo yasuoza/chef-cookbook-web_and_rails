@@ -1,0 +1,17 @@
+{
+  "tz": "Asia/Tokyo",
+  "user": {
+    "name": "developer",
+    "group": "developer",
+    "home" : "/home/developer",
+    "sudoer": "true"
+  },
+  "mysql": {
+    "server_root_password": "root",
+    "server_repl_password": "root",
+    "server_debian_password": "root"
+  },
+  "apache": {
+    "default_site_enabled": "true"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "data_bag_item_users_developer",
+  "json_class": "Chef::DataBagItem",
+  "chef_type": "data_bag_item",
+  "data_bag": "users",
+  "raw_data": {
+    "id": "developer",
+    "name": {
+      "encrypted_data": "qZhY6TkyHldJ3qf0737sbpR/C0Q2vNhetTlsPf2+YQk=\n",
+      "iv": "h9vFfxMfeWm6zrX0jdHR5w==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    },
+    "sudoer": {
+      "encrypted_data": "fbDUzTQwu0YhXIQGSTfyJSg/n3NxvukwsweIQkjWBjQ=\n",
+      "iv": "5YneRn9JjJOTzwTGmuG7Tw==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    },
+    "password": {
+      "encrypted_data": "nwB4NJDxbN0kFuAiwcBnKTIamXSXF0tDr5FvDvOmgtZIGpET/10CmB8zIjIY\nJvfKJsIaLeAWBCn03YyM1PQT5w==\n",
+      "iv": "RNlgGgS8u+X1abeCfaoqmA==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    }
+  }
+}

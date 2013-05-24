@@ -1,0 +1,1 @@
+{"name":"data_bag_item_passwords_developer","json_class":"Chef::DataBagItem","chef_type":"data_bag_item","data_bag":"passwords","raw_data":{"id":"developer","password":{"encrypted_data":"6ldUiUrjTimvMWAcuoB4gPKeKaCJunV0/NuWdIpganpavIGMbQyO3eWXFPu9\nneuYl2xZap8QEVWBtgvG5u2/Tw==\n","iv":"ZRRdUb2zJFyQq0S5jWfmzg==\n","version":1,"cipher":"aes-256-cbc"}}}

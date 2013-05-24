@@ -1,0 +1,38 @@
+require 'json'
+
+Vagrant::Config.run do |config|
+  config.vm.box = "precise64"
+
+  config.vm.network :hostonly, "192.168.33.10"
+
+  config.vm.provision :shell, :inline => "gem install chef --version 11.4.0 --no-rdoc --no-ri --conservative"
+
+  config.vm.provision :chef_solo do |chef|
+    chef.encrypted_data_bag_secret_key_path = "#{ENV['HOME']}/.chef/data_bag_key"
+    chef.cookbooks_path = %w(../cookbooks ../site-cookbooks)
+    chef.roles_path = "../roles"
+    chef.data_bags_path = "../data_bags"
+
+    recipes =
+      %w(
+        build-essential zsh curl git vim timezone
+        change_sshd_config user-origin
+        mysql sqlite redis
+        php54 apache2
+        apache2::mod_php5 apache2::mod_rewrite
+        www_html rbenv nodebrew
+      )
+
+    recipes.each do |recipe|
+      chef.add_recipe recipe
+    end
+
+    # You may also specify custom JSON attributes:
+    node_file = ENV["NODE"] ? "#{ENV["NODE"]}.json" : 'default.json'
+    chef.json = JSON.parse(
+      File.open(
+        File.join(File.expand_path(File.dirname(__FILE__)), '..', 'nodes', node_file)
+      ).read
+    )
+  end
+end
