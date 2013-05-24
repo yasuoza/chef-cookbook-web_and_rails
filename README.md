@@ -26,7 +26,7 @@ Set up web and rails development environment.
 
 ## Developer user
 
-name: developer
+name: developer  
 password: password
 
 Login:
@@ -41,6 +41,10 @@ password: root
 
 ## www directory
 
-Once vm up, www directory created in host directory. The www file is symlinked to `/var/www` in vm.
+Once vm up, www directory created in host directory. The www file is symlinked to `/var/www` in vm.  
 This is useful when crafting a web site. And .htaccess and php54 are available.
-The site can be seen as http://192.168.33.10 in browser.
+The site can be seen like http://192.168.33.10 in browser.
+
+## Vagrant
+
+If you want use this cookbook with vagrant, see `vagrant_example` directory.
