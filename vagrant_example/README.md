@@ -2,30 +2,33 @@
 
 Create your destroyable environment with vagrant.
 
-## Set up secret key for data bag
+## Set up base vagrant box
 
-Create secret key.
-
-```
-$ knife solo init chef-solo
-$ cd chef-solo
-$ openssl rand -base64 512 > data_bag_key
-```
-
-Put key to common directory.
+This example is baed on ubuntu precise 64.
+If you didn't add it to your box list, add it first.
 
 ```
-$ mv data_bag_key ~/.chef/data_bag_key
-$ edit ~/.chef/knife.rb
-
-    encrypted_data_bag_secret "#{ENV['HOME']}/.chef/data_bag_key"
+$ vagrant box add precise64 http://files.vagrantup.com/precise64.box
 ```
 
 ## Usage
 
+Start vm:
+
 ```
-$ gem install vagrant
 $ vagrant up
+```
+
+Shut down:
+
+```
+$ vagrant halt
+```
+
+Restart vm:
+
+```
+$ vagrant reload
 ```
 
 ## www directory
