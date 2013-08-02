@@ -39,7 +39,7 @@ end
 
 bash 'clone dotfiles' do
   destination_path = "#{home}/dotfiles"
-  repository = 'https://github.com/YasuOza/dotfiles.git'
+  repository = 'https://github.com/yasuoza/dotfiles.git'
   destination = destination_path
   user user_name
   group user_name
